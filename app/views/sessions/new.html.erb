@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% if flash[:alert] %>
+      <p id="notice"><%= flash[:alert] %></p>
+    <% end %>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <%= form_tag do %>
+        <form class="form-signin">
+          <h2>Bitte, loggen sie sich ein</h2>
+          <%= label_tag :name, '' %>
+          <%= text_field_tag :name, params[:name], class: 'form-control', placeholder: 'Username' %>
+          <%= label_tag :password, '' %>
+          <%= password_field_tag :password, params[:password], class: 'form-control', placeholder: 'Password' %>
+          <br/>
+          <!--<div class="checkbox"> <label> <input type="checkbox" value="remember-me"> Remember me <!-- todo: remember me system </label> </div>-->
+          <%= submit_tag "Login", class:'btn btn-lg btn-primary btn-block' %>
+        </form>
+      <% end %>
+    </div>
+    <!-- second col-md-4 -->
+  </div>
+  <!-- /container -->
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Andina</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <%= render 'shared/navigation' %>
+      </nav>
+      <main role="main" class="container-fluid" id="main">
+        <div class="row">
+          <div class="col-xs-2" id="sidecol">
+            <%= render 'shared/side'%>
+          </div>
+          <div class="col-xs-9">
+            <%= yield %>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class= "row">
+            <%= render 'shared/footer' %>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

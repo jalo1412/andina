@@ -1,0 +1,61 @@
+  <%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(order.errors.count, "error") %>
+            prohibited this order from being saved:</h2>
+          <ul>
+            <% order.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <h4 class="mb-3">Rechnungsadresse</h4>
+      <form class="needs-valdation was-validated" novalidate="novalidate">
+        <!--ucomment when there is first name and lastname, make an extra col -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="field">
+              <%= form.label :name %>
+              <%= form.text_field :name, id: :order_name, class: 'form-control' %>
+            </div>
+            <div class="invalid-feedback">
+              <!--Valid name is required.-->
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="field">
+            <%= form.label :adress %>
+            <%= form.text_area :adress, id: :order_adress, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="field">
+            <%= form.label :email %>
+            <%= form.text_field :email, id: :order_email, class: 'form-control' %>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <h4 class="mb-3">Zahlungsart</h4>
+        <div class="mb-3">
+          <div class="field">
+            <%= form.label :pay_type %>
+            <%= form.select :pay_type, Order.pay_types.keys, prompt: 'Wählen Sie Zahlungsart Method', class: 'custom-select d-block w-100' %>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <!--<div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="same-address">
+          <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="save-info">
+          <label class="custom-control-label" for="save-info">Save this information for next time</label>
+        </div> -->
+        <hr class="mb-4">
+        <div class="actions">
+          <%= form.submit'Order Einstellen', class: 'btn btn-primary btn-lg btn-block'%>
+        </div>
+      </form>
+<% end %>

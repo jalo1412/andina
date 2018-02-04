@@ -1,0 +1,38 @@
+<%= form_with(model: user, local: true) do |form| %>
+<% if user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(user.errors.count, "error") %>
+      prohibited this user from being saved:</h2>
+
+    <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<form class="needs-valdation was-validated" novalidate="novalidate">
+  <div class="mb-3">
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :user_name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password, id: :user_password, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="field">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, id: :user_password_confirmation, class: 'form-control' %>
+    </div>
+  </div>
+  <hr class="mb-4">
+  <div class="actions">
+    <%= form.submit'New User Einstellen', class: 'btn btn-primary btn-lg'%>
+  </div>
+</form>
+<% end %>

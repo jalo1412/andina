@@ -1,0 +1,24 @@
+<tr>
+  <td data-th="Product">
+    <div class="row">
+      <div class="col-sm-2 hidden-xs"><%= image_tag (line_item.product.image_url), width: 100, height: 100%></div>
+      <div class="col-sm-10">
+        <h4 class="nomargin"><%= line_item.product.title %></h4>
+        <p><%= line_item.product.description %></p>
+      </div>
+    </div>
+  </td>
+  <td data-th="Price">
+    <%= number_to_currency(line_item.product.price, :locale => :en) %>
+  </td>
+  <td data-th="Quantity">
+    <%= form_for (line_item), local: true do |form| %>
+    <!-- is not working with ajax, is only redirecting to the same page. Render and partial need to be implemented -->
+        <%= form.number_field :quantity, class: 'form-control text-center', onchange: "$(this).parent('form').submit();"%>
+    <% end %>
+    </td>
+  <td class="actions" data-th="">
+    <!-- when deleted, the red dot of the shopping cart at the nav-bar doesnt actualize with it -->
+    <%=link_to '', line_item_path(line_item), remote: true, method: :delete, class: 'btn btn-danger glyphicon glyphicon-trash pull-right' %>
+  </td>
+</tr>

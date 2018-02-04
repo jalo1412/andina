@@ -1,0 +1,25 @@
+<body>
+
+  <main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Danke, Ihr produkt ist in Einkaufswagen</h1>
+        <p class="lead text-muted">Mit deine Einkauf, helfen Sie Uherinwohner von Chile.</p>
+        <p>
+          <a href="/" class="btn btn-warning pull-left">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Weiter Einkaufen</a>
+          <%= link_to 'Check Out <i class="glyphicon glyphicon-chevron-right"></i>'.html_safe, new_order_path, method: :get, class:'btn btn-success pull-right'%>
+        </p>
+      </div>
+    </section>
+
+    <section id="recomendation">
+      <!-- to do, recomendation and other users also bought. Temporary replaced with catalog -->
+      <div class="container">
+        <h2>Ihnen recomendationen</h2>
+        <br/>
+        <%=render(@products)%>
+      </div>
+    </section>
