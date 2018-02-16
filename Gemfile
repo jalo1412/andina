@@ -61,4 +61,4 @@ gem 'jquery-rails'
 
 gem 'bcrypt'
 
-gem 'ruby 2.5.0p0'
+ruby '2.5.0'
