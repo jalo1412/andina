@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get 'store/index', as: 'store_index'
   get 'admin' => 'admin#index'
 
   controller :sessions do
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
       get 'show'
     end
   end
-  root 'store#index', as: 'store_index'
+  root 'welcome#landing', as: 'welcome_landing'
   resources :products do
     get :who_bought, on: :member
   end

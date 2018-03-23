@@ -5,7 +5,11 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:name])
     if user.try(:authenticate, params[:password])
       session[:user_id] = user.id
-      redirect_to admin_url
+      if user.type_of_user == 0
+        redirect_to admin_url
+      else
+        redirect_to store_index_path, notice: 'welcome'
+      end
     else
       redirect_to login_url, alert: 'Invalid user/password combination'
     end

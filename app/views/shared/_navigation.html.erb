@@ -1,65 +1,65 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div data-turbolinks="false">
+<%= link_to "Andina", welcome_landing_path, class: "navbar-brand", data: { no_turbolink: true } %>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-    <div class="navbar-header">
-      <%= link_to "Andina", store_index_path, class: "navbar-brand", data: { no_turbolink: true } %>
-    </div>
-    <form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Suchen">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Alle Kategories
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">Schallen</a>
+        <a class="dropdown-item" href="#">Pisco</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Alles</a>
       </div>
-    </form>
-    <ul class="#"></ul>
-    <div id="nav-navbar-right">
-      <ul class="nav navbar-nav navbar-right">
-        <% if not session[:user_id] %>
-          <li>
-            <%=link_to new_user_path, class:'a' do%>
-            <i class="glyphicon glyphicon-plus"></i>
-            New Account
-          <% end %>
-        </li>
-        <li>
-          <%=link_to login_path, class:'a' do%>
-          <i class="glyphicon glyphicon-user"></i>
-          Logg In
-        <% end %>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Soon</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+    <% if not session[:user_id] %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Anmelden
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%=link_to 'Anmelden', login_path, class:'dropdown-item'%>
+          <div class="dropdown-divider"></div>
+          <%=link_to 'Neues konto erstellen', new_user_path, class:'dropdown-item' %>
+        </div>
       </li>
     <% end %>
     <% if session[:user_id] %>
-    <li>
-      <%=link_to logout_path, method: :delete, id:'a-out' do%>
-      <i class="glyphicon glyphicon-remove"></i>
-      logg-out
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Hallo
+          <%= @user.name %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%=link_to 'Meine Konto', @user, class:'dropdown-item'%>
+          <div class="dropdown-divider"></div>
+          <%=link_to 'Abmelden', logout_path, method: :delete, class:'dropdown-item' %>
+        </div>
+      </li>
     <% end %>
-  </li>
-      <li>
-        <%=link_to @user, class:'a' do%>
-        <i class="glyphicon glyphicon-user"></i>
-        My Account
-      <% end %>
-    </li>
-  <% end %>
-  <li>
-    <%= link_to @cart, class:'a' do %>
-    <i class="glyphicon glyphicon-shopping-cart"></i>
-    Einkaufswagen
-    <% if @cart %>
-      <% items = @cart.line_items.to_a.sum {|item| item.quantity} %>
-        <% if items > 0 %>
-          <!-- use <span class="badge badge-secondary badge-pill"> for more style-->
-          <div id="shopping-circle"><%= items %></div>
-        <% end %>
+    <li class="nav-item ">
+      <%= link_to @cart, class:'nav-link' do%>
+      Einkaufswagen
+      <% if @cart %>
+        <% items = @cart.line_items.to_a.sum {|item| item.quantity} %>
+          <% if items > 0 %>
+            <span class="badge badge-danger"><%= items %></span>
+          <% end %>
+        <%end%>
       <%end%>
-    <%end%>
-  </li>
-  <li></li>
-</ul>
+    </li>
+  </ul>
 </div>
-</div>
-</nav>

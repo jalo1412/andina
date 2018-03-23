@@ -1,13 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyText
+  title:       MyText
   description: MyText
-  image_url: MyString
-  price: 9.99
+  image_url:   MyString
+  price:       9.99
 
 two:
-  title: MyText
+  title:       MyText
   description: MyText
-  image_url: MyString
-  price: 9.99
+  image_url:   MyString
+  price:       9.99
+
+scarf:
+  title:       Scarf made of Lamma Woohl
+  description:
+    Scarf made of lama wohl are the finest on the market.
+    With your purshaes, you help a kid in need.
+  price:       49.50
+  image_url:   scarf.png

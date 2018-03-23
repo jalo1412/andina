@@ -19,6 +19,6 @@
     </td>
   <td class="actions" data-th="">
     <!-- when deleted, the red dot of the shopping cart at the nav-bar doesnt actualize with it -->
-    <%=link_to '', line_item_path(line_item), remote: true, method: :delete, class: 'btn btn-danger glyphicon glyphicon-trash pull-right' %>
+    <%=link_to 'delete', line_item_path(line_item), remote: true, method: :delete, class: 'btn btn-danger glyphicon glyphicon-trash float-right' %>
   </td>
 </tr>
