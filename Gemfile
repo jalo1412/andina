@@ -68,3 +68,5 @@ gem 'jquery-rails'
 gem 'bcrypt'
 
 ruby '2.5.0'
+#gem for assets and heroku
+gem 'rails_12factor', group: :production
