@@ -3,7 +3,7 @@
     <h1 class="jumbotron-heading">Danke, Ihr produkt ist in Einkaufswagen</h1>
     <p class="lead text-muted">Mit deine Einkauf, helfen Sie Uherinwohner von Chile.</p>
     <p>
-      <%=link_to 'Weiter Einkaufen', store_index_url ,class:'btn btn-warning float-left' %>
+      <%=link_to 'Weiter Einkaufen', store_index_path ,class:'btn btn-warning float-left' %>
 
       <%= link_to 'Check Out <i class="glyphicon glyphicon-chevron-right"></i>'.html_safe, new_order_path, method: :get, class:'btn btn-success float-right'%>
     </p>
