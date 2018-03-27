@@ -1,3 +1,5 @@
-Order#recived
-
-<%= @greeting %>, find me in app/views/order_mailer/recived.text.erb
+Dear <%= @order.name %>
+Thank you for your recent order from The Pragmatic Store.
+You ordered the following items:
+<%= render @order.line_items -%>
+We'll send you a separate e-mail when your order ships.

@@ -1,6 +1,28 @@
-Dear <%= @order.name %>
-Thank you for your recent order from Andina.
-
-<!-- to do: table with the orders content -->
-
-We'll send you a separate e-mail when your order ships.
+<% total = 0%>
+  Dear
+  <%= @order.name %>
+  Thank you for your recent order from The Pragmatic Store. You ordered the following items:
+  <table>
+    <tr>
+      <th>
+        Name of The Product
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Ammount
+      </th>
+    </tr>
+    <tr>
+      <% @order.line_items.each do |line_item| %>
+        <%=render 'line_items/line_item_mailer', :line_item => line_item%>
+        <% total = total + line_item.product.price * line_item.quantity %><% end %>
+      </tr>
+    </table>
+    <br/>
+    Your
+    <b>total</b>
+    to pay is <b>€<%=total%></b>.
+    <br/>
+    We'll send you a separate e-mail when your order ships.
