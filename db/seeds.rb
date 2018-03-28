@@ -11,6 +11,6 @@ Product.create(title: 'Roter Schal', description: 'schicker roter Schal aus Lama
 Product.create(title: 'Gelber Schal', description: 'schicker gelber Schal aus Lamawolle', image_url: 'gelbes_schall.jpg', price: 23.00)
 Product.create(title: 'Blauer Schal', description: 'schicker blauer Schal aus Lamawolle', image_url: 'blauer_schall.jpg', price: 30.00)
 Product.create(title: 'Lila Schal', description: 'schicker lila Schal aus Lamawolle', image_url: 'lila_schall.jpg', price: 30.00)
-Product.create(title: 'Scarf', description: 'schicker lila Schal aus Lamawolle', image_url: 'scarf.jpg', price: 30.00)
+Product.create(title: 'Scarf', description: 'This is here for testing reasons', image_url: 'scarf.jpg', price: 30.00)
 User.create(name: 'admin', password_digest: BCrypt::Password.create("admin"), type_of_user: 0)
 User.create(name: 'user', password_digest: BCrypt::Password.create("user"), type_of_user: 1)

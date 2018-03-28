@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'orders/done'
+
   get 'store/index'
   get 'admin' => 'admin#index'
 

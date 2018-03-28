@@ -10,9 +10,12 @@
         Alle Kategories
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <%=link_to 'Schallen', store_index_url, class: 'dropdown-item' %>
+        <%=link_to 'Schals', store_index_url, class: 'dropdown-item' %>
+        <%=link_to 'Mützen', store_index_url, class: 'dropdown-item' %>
+        <%=link_to 'Ponschos', store_index_url, class: 'dropdown-item' %>
+        <div class="dropdown-divider"></div>
         <%=link_to 'Pisco', store_index_url, class: 'dropdown-item' %>
-
+        <%=link_to 'Weine', store_index_url, class: 'dropdown-item' %>
         <div class="dropdown-divider"></div>
         <%=link_to 'Alles', store_index_url, class: 'dropdown-item' %>
       </div>
@@ -34,7 +37,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%=link_to 'Anmelden', login_path, class:'dropdown-item'%>
           <div class="dropdown-divider"></div>
-          <%=link_to 'Neues konto erstellen', new_user_path, class:'dropdown-item' %>
+          <%=link_to 'Neues Konto erstellen', new_user_path, class:'dropdown-item' %>
         </div>
       </li>
     <% end %>
@@ -45,7 +48,7 @@
           <%= @user.name %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%=link_to 'Meine Konto', @user, class:'dropdown-item'%>
+          <%=link_to 'Mein Konto', @user, class:'dropdown-item'%>
           <div class="dropdown-divider"></div>
           <%=link_to 'Abmelden', logout_path, method: :delete, class:'dropdown-item' %>
         </div>

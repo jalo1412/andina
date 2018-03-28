@@ -34,7 +34,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderMailer.received(@order).deliver_later
-        format.html { redirect_to store_index_url, notice: 'Danke für Ihr Einkauf'}
+        format.html { redirect_to orders_done_url, notice: 'Danke für Ihr Einkauf'}
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -65,6 +65,10 @@ class OrdersController < ApplicationController
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def done
+    @products = Product.order(:title)
   end
 
   private
