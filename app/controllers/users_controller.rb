@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -44,9 +44,10 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_url,
-          notice: "User #{@user.name} was successfully updated." }
-        format.json { render :show, status: :ok, location: @user }
+        format.html {
+          if @user.type_of_user == 0 then redirect_to users_url,   notice: "User #{@user.name} was successfully updated."
+          else redirect_to @user,   notice: "User #{@user.name} was successfully updated." end
+         }
       else
         format.html { render :edit }
         format.json { render json: @user.errors,

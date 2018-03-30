@@ -1,9 +1,35 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg">
+      <p>
+        <strong>Name:</strong>
+        <%= @user.name %>
+      </p>
+      <p>
+        Sie haben bis heute 0 Euro ins Hilfe für chilenische Uhreinwohner gespendet
+      </p>
+    </div>
+  </div>
+  <div class="row p-3">
+    <div class="col">
+      <%= link_to 'Benutzer Bearbeiten', edit_user_path(@user), class:'btn btn-outline-dark' %>
+    </div>
+    <div class="col">
+      <%= link_to 'Meine Bestellungen', edit_user_path(@user), class:'btn btn-outline-dark' %>
+    </div>
+  </div>
+  <div class="row p-3">
+    <div class="col">
+      <%= link_to 'Problem melden', edit_user_path(@user), class:'btn btn-outline-dark' %>
+    </div>
+    <div class="col">
+      <%= link_to 'Konto Loschen', edit_user_path(@user), class:'btn btn-outline-danger' %>
+    </div>
+  </div>
+  <div class="row pt-1 pl-3">
+    <div class="col">
+      <%= link_to 'Back', store_index_path %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,20 @@
 <div class="container">
-<h2>
-  Verschenk warme Liebe
-</h2>
+  <h2>
+    Verschenk warme Liebe
+  </h2>
+<%if @user == nil or @user.type_of_user != 0 then%>
 </p>In diesem Monat haben wir 0 Euro für chilenische Uhreinwohner gesammelt :(</p>
+
+<%elsif session[:user_id]%>
+
+<p class="lead">Hallo <%= @user.name %>!</p>
+<nav class="nav flex-column">
+<%= link_to 'Store#Index', store_index_path, class: 'nav-link active' %>
+<%= link_to 'Produkten Verwalten', products_path, class: 'nav-link active' %>
+<%= link_to 'Bestellungen Verwalten', orders_path, class: 'nav-link active' %>
+<%= link_to 'Users Verwalten', users_path(:id => @user.id), class: 'nav-link active' %>
+<%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link active'%>
+
+</nav>
 </div>
+<%end%>

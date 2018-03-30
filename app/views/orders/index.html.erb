@@ -2,8 +2,8 @@
 
 <h1>Orders</h1>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead">
     <tr>
       <th>Name</th>
       <th>Adress</th>
@@ -20,9 +20,9 @@
         <td><%= order.adress %></td>
         <td><%= order.email %></td>
         <td><%= order.pay_type %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', order, class: 'btn btn-outline-link' %></td>
+        <td><%= link_to 'Edit', edit_order_path(order), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', order ,class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_order_path, class: 'btn btn-success'  %>

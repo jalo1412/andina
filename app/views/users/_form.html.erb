@@ -32,7 +32,11 @@
   </div>
   <hr class="mb-4">
   <div class="actions">
-    <%= form.submit'New User Einstellen', class: 'btn btn-primary btn-lg'%>
+    <% if session != nil %>
+    <%= form.submit'Änderungen Speichern', class: 'btn btn-primary btn-lg'%>
+    <% else %>
+    <%= form.submit'Neuen Benutzer Erstellen', class: 'btn btn-primary btn-lg'%>
+    <%end%>
   </div>
 </form>
 <% end %>
