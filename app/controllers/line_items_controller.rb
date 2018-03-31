@@ -30,7 +30,7 @@ class LineItemsController < ApplicationController
     @line_item = @cart.add_product(product)
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to controller: "carts", action: "added", id:@cart.id, notice: 'Wahr ist in Einkaufswagen'}
+        format.html { redirect_to controller: "carts", action: "added", id:@cart.id}
         format.js
         format.json { render :show, status: :created, location: @line_item }
       else

@@ -3,9 +3,9 @@
     <h1 class="jumbotron-heading">Danke für Ihren Einkauf.</h1>
     <p class="lead text-muted">Bald senden wir Ihnen eine Bestätigung per Email. Mit Ihrem Einkauf helfen Sie Uherinwohnern in Chile.</p>
     <p>
-      <%=link_to 'Weiter Einkaufen', store_index_path ,class:'btn btn-warning float-left' %>
+      <%=link_to '<i class="fas fa-angle-left"></i> Weiter Einkaufen'.html_safe, store_index_path ,class:'btn btn-warning float-left' %>
 
-      <%= link_to 'Check Out <i class="glyphicon glyphicon-chevron-right"></i>'.html_safe, new_order_path, method: :get, class:'btn btn-success float-right'%>
+      <%= link_to 'My orders', users_added_path(:id => @user), method: :get, class:'btn btn-dark float-right'%>
     </p>
   </div>
 </section>

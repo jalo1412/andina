@@ -3,9 +3,9 @@
     <h1 class="jumbotron-heading">Danke, Ihr Produkt ist im Einkaufswagen</h1>
     <p class="lead text-muted">Mit Ihrem Einkauf helfen Sie Uherinwohnern in Chile.</p>
     <p>
-      <%=link_to 'Weiter Einkaufen', store_index_path ,class:'btn btn-warning float-left' %>
+      <%=link_to '<i class="fas fa-angle-left"></i> Weiter Einkaufen'.html_safe, store_index_path ,class:'btn btn-warning float-left' %>
 
-      <%= link_to 'Check Out <i class="glyphicon glyphicon-chevron-right"></i>'.html_safe, new_order_path, method: :get, class:'btn btn-success float-right'%>
+      <%= link_to 'Check Out <i class="fas fa-angle-right"></i>'.html_safe, new_order_path, method: :get, class:'btn btn-success float-right'%>
     </p>
   </div>
 </section>

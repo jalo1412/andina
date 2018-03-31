@@ -56,7 +56,7 @@
     <% end %>
     <li class="nav-item ">
       <%= link_to @cart, class:'nav-link' do%>
-      Einkaufswagen
+      Einkaufswagen 
       <% if @cart %>
         <% items = @cart.line_items.to_a.sum {|item| item.quantity} %>
           <% if items > 0 %>

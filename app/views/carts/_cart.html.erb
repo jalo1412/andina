@@ -17,7 +17,7 @@
   </div>
   <tfoot>
     <td>
-      <%=link_to 'Weiter Einkaufen', store_index_path ,class:'btn btn-warning float-left' %>
+      <%=link_to '<i class="fas fa-angle-left"></i> Weiter Einkaufen'.html_safe, store_index_path ,class:'btn btn-warning float-left' %>
     </td>
     <td class="hidden-xs text-left">
       <strong>Total
@@ -25,7 +25,7 @@
     </td>
     <td></td>
     <td>
-      <%= link_to 'Check Out <i class="glyphicon glyphicon-chevron-right"></i>'.html_safe, new_order_path, method: :get, class:'btn btn-success btn-block pull-right'%>
+      <%= link_to 'Check Out <i class="fas fa-angle-right"></i>'.html_safe, new_order_path, method: :get, class:'btn btn-success btn-block pull-right'%>
     </td>
     <tr></tr>
   </tfoot>
