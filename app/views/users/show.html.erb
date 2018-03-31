@@ -16,7 +16,7 @@
       <%= link_to 'Benutzer Bearbeiten', edit_user_path(@user), class:'btn btn-outline-dark' %>
     </div>
     <div class="col">
-      <%= link_to 'Meine Bestellungen', edit_user_path(@user), class:'btn btn-outline-dark' %>
+      <%= link_to 'Meine Bestellungen', users_added_path(:id => @user), class:'btn btn-outline-dark' %>
     </div>
   </div>
   <div class="row p-3">

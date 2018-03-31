@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/added'
+
   get 'orders/done'
 
   get 'store/index'
